@@ -1,0 +1,181 @@
+.hero {
+    max-width: 80rem;
+    width: 100%;
+    margin-inline: auto;
+    padding: 2.5rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+    & h1 {
+        max-width: 40rem;
+    }
+
+   & h1 div{
+        display: inline-block;
+        overflow: hidden;
+        height: 5rem; 
+        width: min-content; 
+        vertical-align: bottom;
+    }
+
+  &  h1 span:nth-child(1),
+  &  h1 span:nth-child(4) {
+        color: var(--snitap-sky-mid);
+    }
+  &  h1 span:nth-child(2) {
+        color: var(--snitap-joy-mid);
+    }
+  &  h1 span:nth-child(3) {
+        color: var(--snitap-leaf-mid);;
+    }
+
+  &  h1 span {
+        display: block;
+
+        animation: slideup 5s 2s infinite ease;
+    }
+
+    &>div:nth-child(2) {
+        display: block;
+        width: 100%;
+        max-width: 30.5rem;
+        height: 30.5rem;
+
+        & .content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        & .content img {
+            position: absolute;
+            width: 100%;
+        }
+
+        & img[src*="ellipse"] {
+            width: 94%;
+            top: 3%;
+            left: 3%;
+
+            transform: translateX(200%);
+            animation: slidein 3s 200ms ease forwards;
+        }
+        & img[src*="patins"] {
+            z-index: 1;
+            transform: translateX(200%);
+            animation: slidein 3s  ease forwards;
+        }
+
+        & img[src*="stars-1"] {
+            max-width: 5.5rem;
+            top: 30%;
+            z-index: 0;
+            opacity: 0;
+
+            transform: translateX(400%);
+            animation: slidein 2s 800ms ease both, appear 100ms 800ms both;
+        }
+
+        & img[src*="stars-2"] {
+            max-width: 2.5rem;
+            bottom: 35%;
+            right: 0;
+            z-index: 0;
+
+            transform: translateX(400%);
+            animation: slidein 2s 800ms ease both;
+        }
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    50% {
+        transform: translateX(-25px);
+    }
+    
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideup {
+    /* radical static */
+    0%, 22% { 
+        transform: translateY(0);
+    }
+    /* divertida in */
+    23%{
+        transform: translateY(calc(-5rem - 40px));
+    }
+
+    25% {
+        transform: translateY(calc(-5rem + 20px));
+    }
+
+    27% {
+        transform: translateY(calc(-5rem - 10px));
+    }
+
+    29% {
+        transform: translateY(calc(-5rem + 10px));
+    }
+    
+    /* divertida static */
+    33%, 55%{
+        transform: translateY(-5rem);
+    }
+
+    /* saudável in */
+    56%{
+        transform: translateY(calc(-10rem - 40px));
+    }
+
+    58% {
+        transform: translateY(calc(-10rem + 20px));
+    }
+
+    60% {
+        transform: translateY(calc(-10rem - 10px));
+    }
+
+    62% {
+        transform: translateY(calc(-10rem + 10px));
+    }
+    
+
+    /* Radical static */
+    66%, 88%{
+        transform: translateY(-10rem);
+    }
+
+    /* Radical in */
+
+    89%{
+        transform: translateY(calc(-15rem - 40px));
+    }
+
+    91% {
+        transform: translateY(calc(-15rem + 20px));
+    }
+
+    93% {
+        transform: translateY(calc(-15rem - 10px));
+    }
+
+    95% {
+        transform: translateY(calc(-15rem + 10px));
+    }
+
+    100%{
+        transform: translateY(-15rem);
+    }
+}

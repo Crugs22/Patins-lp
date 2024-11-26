@@ -1,0 +1,107 @@
+.gallery {
+    width: 100%;
+    max-width: 80rem;
+    padding: 2.5rem 2rem;
+    margin-inline: auto;
+
+    header {
+        text-align: center;
+    }
+
+    & header span {
+        font: var(--text-span);
+    }
+
+    & img {
+        width: 100%;
+        height: auto;
+        transition: scale 500ms;
+    }
+
+    & .content {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-areas: 
+        "a b b"
+        "c c d";
+
+        gap: 2.5rem;
+
+        & figure:nth-child(1){
+            grid-area: a;
+        }
+        & figure:nth-child(2){
+            grid-area: b;
+        }
+        & figure:nth-child(3){
+            grid-area: c;
+        }
+        & figure:nth-child(4){
+            grid-area: d;
+        }
+
+        & figure {
+            border-radius: 2.5rem;  
+            overflow: hidden; 
+            position: relative;
+            line-height: 0;
+            
+            animation: image-appear  linear backwards;
+            animation-timeline: view();
+            animation-range: 100px 350px;
+
+            &[data-delay] {
+                animation-range: 150px 350px;
+            }
+
+
+            & > img {
+                height: 25rem;
+                object-fit: cover;
+                transition: transform 500ms;
+                
+                &:hover {
+                    transform: scale(1.1);
+
+                    figcaption {
+                        transform: translateY(0);
+                    }
+                }
+
+                &  figcaption {
+                    transform: translateY(0);
+            }
+
+            & figcaption {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                gap: .5rem;
+                
+                transition: transform 500ms;
+                transform: translateY(100%);
+    
+                font: 500 var(--text-span)/1.5 var(--font-family);
+                
+                padding: 1.5rem 2rem;
+                background: linear-gradient(
+                to top,
+                rgb(0 0 0 / 0.56), 
+                rgb(0 0 0 / 0)
+                );
+                } 
+            }
+        }
+    }
+}
+
+@keyframes image-appear {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}

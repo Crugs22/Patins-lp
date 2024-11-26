@@ -1,0 +1,57 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+
+    /* Cores da Marca */
+    --snitap-sun: #FFCD1E;
+    --snitap-sky-mid: #06B6D4;
+    --snitap-sky-light: #67E8F9;
+    --snitap-joy-mid: #DB2777;
+    --snitap-joy-light: #F472B6;
+    --snitap-leaf-mid: #16A34A;
+
+    /* Base */
+    --text-color: #000000;
+    --hightlights: #000000;
+    --bg-color:#FAFAFA;
+
+    /* Fontes */
+    --font-family-title: 'Syne', sans-serif;    
+    --font-family: 'Montserrat', sans-serif;
+
+    --text-title: 700 4rem/125% var(--font-family-title);
+    --text-subtitle: 700 3rem/120% var(--font-family-title);
+
+    --text-button-label: 600 1rem/150% var(--font-family);
+    --text-span: 600 .875rem/150% var(--font-family);
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+}
+
+html {
+    zoom: .6;
+}
+
+h1 {
+    font: var(--text-title);
+}
+
+h2 {
+    font: var(--text-subtitle);
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
